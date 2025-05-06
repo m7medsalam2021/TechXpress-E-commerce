@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace Domain.Models
         [Required]
         public string Name { get; set; }
         public string Description { get; set; }
+
+        [ValidateNever]
         public string Image { get; set; }
     }
 }
