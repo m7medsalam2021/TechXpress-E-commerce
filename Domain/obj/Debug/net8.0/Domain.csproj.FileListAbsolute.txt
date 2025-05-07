@@ -1,0 +1,13 @@
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Domain\bin\Debug\net8.0\Domain.deps.json
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Domain\bin\Debug\net8.0\Domain.dll
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Domain\bin\Debug\net8.0\Domain.pdb
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Domain\obj\Debug\net8.0\Domain.dll
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Domain\obj\Debug\net8.0\refint\Domain.dll
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Domain\obj\Debug\net8.0\Domain.pdb
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Domain\obj\Debug\net8.0\ref\Domain.dll

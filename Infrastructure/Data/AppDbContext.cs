@@ -1,4 +1,5 @@
 ﻿using Domain.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<User>
     {
         public AppDbContext(DbContextOptions options) : base(options)
         {
@@ -20,5 +21,6 @@ namespace Infrastructure.Data
         public DbSet<OrderProduct> OrderProducts { get; set; } // OrderProduct table
         public DbSet<Category> Categories { get; set; } // Wishlist table
         public DbSet<SliderImage> SliderImageS { get; set; } // SliderImageS table
+        public DbSet<User> Users { get; set; } // User table
     }
 }

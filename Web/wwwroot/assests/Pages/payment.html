@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topoco - Online Payment</title>
+
+    <!-- File CSS -->
+    <link rel="stylesheet" href="../css/pay.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header Start -->
+    <header>
+        <div class="container top-nav">
+            <a href="../../index.html" class="logo"><img src="../img/logo-black.png" alt=""></a>
+            <form action="" class="search">
+                <input type="search" placeholder="Search for products...">
+                <button type="submit">Search</button>
+            </form>
+            <div class="cart_header">
+                <div onclick="open_cart()" class="icon_cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="count_item">0</span>
+                </div>
+                <div class="tottal_price">
+                    <p>My Cart:</p>
+                    <p class="price_cart_Head">$0</p>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="links container">
+                <i onclick="open_menu()" class="fa-solid fa-bars btn_open_menu"></i>
+                <ul id="menu">
+                    <span onclick="close_menu()" class="bg-overlay"></span>
+                    <i onclick="close_menu()" class="fa-regular fa-circle-xmark btn_close_menu"></i>
+                    <img class="logo_menu" src="../img/logo-black.png" alt="">
+                    <li><a href="../index.html">home</a></li>
+                    <li><a href="../Pages/all_products.html">all products</a></li>
+                    <li><a href="../Pages/about.html">about us</a></li>
+                    <li><a href="../Pages/contact.html">contact</a></li>
+                </ul>
+                <div class="loging_signup">
+                    <a href="../Pages/login.html">login <i class="fa-solid fa-right-to-bracket"></i></a>
+                    <a href="../Pages/signup_page.html">sign up <i class="fa-solid fa-user-plus"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Header End -->
+
+    <!-- Cart Start -->
+    <div class="cart">
+        <div class="top_cart">
+            <h3>My cart <span class="count_item_cart">(0 Item in Cart)</span></h3>
+            <span onclick="close_cart()" class="close_cart"><i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_cart"></div>
+        <div class="bottom_Cart">
+            <div class="total">
+                <p>Cart subtotal</p>
+                <p class="price_cart_total">$0</p>
+            </div>
+            <div class="button_Cart">
+                <a href="../Pages/checkout.html" class="btn_cart">Proceed to checkout</a>
+                <a href="../Pages/all_products.html" class="btn_cart trans_bg">Shop more</a>
+            </div>
+        </div>
+    </div>
+    <!-- Cart End -->
+
+    <!-- Payment Section Start -->
+    <section class="payment">
+        <div class="container payment-container">
+            <!-- Payment Form Start -->
+            <div class="payment-form">
+                <h2>Payment Details</h2>
+                <form id="payment-form">
+                    <!-- Payment Method Selection -->
+                    <div class="payment-method">
+                        <div class="method-options">
+                            <div class="row credit">
+                                <div class="left">
+                                    <input id="cd" type="radio" name="payment-method" value="credit" checked onchange="togglePaymentForm()" />
+                                    <div class="radio"></div>
+                                    <label for="cd">Debit/Credit Card</label>
+                                </div>
+                                <div class="right">
+                                    <img src="../img/payment-1.png" alt="">
+                                    <img src="../img/payment-2.png" alt="">
+                                    <img src="../img/payment-3.png" alt="">
+                                    <img src="../img/payment-4.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Credit Card Form -->
+                    <div id="credit-card-form" class="credit-card-form">
+                        <div class="row cardholder">
+                            <div class="info">
+                                <label for="cardholdername">Name</label>
+                                <input placeholder="e.g. Richard Bovell" id="cardholdername" name="cardholdername" type="text" required />
+                            </div>
+                        </div>
+                        <div class="row number">
+                            <div class="info">
+                                <label for="cardnumber">Card Number</label>
+                                <input id="cardnumber" name="cardnumber" type="text" pattern="[0-9]{16,19}" maxlength="19" placeholder="8888-8888-8888-8888" required />
+                            </div>
+                        </div>
+                        <div class="row details">
+                            <div class="left">
+                                <label for="expiry-month">Expiry</label>
+                                <select id="expiry-month" name="expiry-month" required>
+                                    <option value="">MM</option>
+                                    <option value="1">01</option>
+                                    <option value="2">02</option>
+                                    <option value="3">03</option>
+                                    <option value="4">04</option>
+                                    <option value="5">05</option>
+                                    <option value="6">06</option>
+                                    <option value="7">07</option>
+                                    <option value="8">08</option>
+                                    <option value="9">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <span>/</span>
+                                <select id="expiry-year" name="expiry-year" required>
+                                    <option value="">YYYY</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2028">2028</option>
+                                    <option value="2029">2029</option>
+                                    <option value="2030">2030</option>
+                                </select>
+                            </div>
+                            <div class="right">
+                                <label for="cvv">CVC/CVV</label>
+                                <input id="cvv" name="cvv" type="text" maxlength="4" placeholder="123" required />
+                                <span title="The 3 or 4-digit number on the back of your card.">i</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Confirm Button -->
+                    <div class="button">
+                        <button type="submit"><i class="fa-solid fa-lock"></i> Confirm and Pay</button>
+                        <a href="../Pages/checkout.html" class="cancel-button"><i class="fa-solid fa-times"></i> Cancel Order</a>
+                    </div>
+                </form>
+            </div>
+            <!-- Payment Form End -->
+
+            <!-- Order Summary Start -->
+            <div class="ordersummary">
+                <h1>Order Summary</h1>
+                <div class="summary-details">
+                    <div class="total">
+                        <p>Total</p>
+                        <span>$99.99</span>
+                    </div>
+                    <div class="payment-method-details">
+                        <p>Payment Method</p>
+                        <span id="selected-payment-method">Debit/Credit Card</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Order Summary End -->
+        </div>
+    </section>
+    <!-- Payment Section End -->
+
+    <!-- Footer Start -->
+    <footer>
+        <div class="container">
+            <div class="big_row">
+                <img src="../img/logo-white.png" alt="">
+                <div class="hotline">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="text">
+                        <h5>Hotline Free 24/24:</h5>
+                        <h6>(+100) 123 456 7890</h6>
+                    </div>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit consectetur.</p>
+            </div>
+            <div class="row">
+                <h4>FAQs & Help</h4>
+                <div class="links">
+                    <a href="#">F.A.Q.’s</a>
+                    <a href="#">Ordering Tracking</a>
+                    <a href="../Pages/contact.html">Contacts</a>
+                    <a href="#">Events</a>
+                    <a href="#">Help Center</a>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Shipping & Delivery</h4>
+                <div class="links">
+                    <a href="#">Delivery Information</a>
+                    <a href="#">Discount</a>
+                    <a href="#">Payment & Shipping</a>
+                    <a href="#">Estimated Delivery Time</a>
+                    <a href="#">Shipping Guide</a>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Information</h4>
+                <div class="links">
+                    <a href="#">Popular</a>
+                    <a href="#">Our Services</a>
+                    <a href="#">Your Account</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Condition</a>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_footer">
+            <div class="container">
+                <p>Copyright © <span>Topico.</span> all rights reserved</p>
+                <div class="payment_img">
+                    <img src="../img/payment-1.png" alt="">
+                    <img src="../img/payment-2.png" alt="">
+                    <img src="../img/payment-3.png" alt="">
+                    <img src="../img/payment-4.png" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Inline JavaScript for Toggling Payment Forms and Validation -->
+    <script>
+        // Toggle Payment Form and Update Payment Method in Summary
+        function togglePaymentForm() {
+            const creditCardForm = document.getElementById('credit-card-form');
+            const paypalForm = document.getElementById('paypal-form');
+            const selectedMethodSpan = document.getElementById('selected-payment-method');
+            const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+
+            if (paymentMethod === 'credit') {
+                creditCardForm.style.display = 'block';
+                paypalForm.style.display = 'none';
+                selectedMethodSpan.textContent = 'Debit/Credit Card';
+            } else {
+                creditCardForm.style.display = 'none';
+                paypalForm.style.display = 'block';
+                selectedMethodSpan.textContent = 'PayPal';
+            }
+        }
+
+        // Form Validation
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // منع الإرسال الافتراضي للفورم
+
+            const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+
+            if (paymentMethod === 'paypal') {
+                // إذا اختار PayPal، يتم توجيه المستخدم مباشرة
+                window.location.href = 'https://www.paypal.com';
+                return;
+            }
+
+            // التحقق من بيانات الكارت إذا اختار Credit Card
+            const cardholderName = document.getElementById('cardholdername').value.trim();
+            const cardNumber = document.getElementById('cardnumber').value.trim();
+            const expiryMonth = document.getElementById('expiry-month').value;
+            const expiryYear = document.getElementById('expiry-year').value;
+            const cvv = document.getElementById('cvv').value.trim();
+
+            // التحقق من الحقول المطلوبة
+            if (cardholderName === '' || cardNumber === '' || expiryMonth === '' || expiryYear === '' || cvv === '') {
+                alert('Please fill in all required fields (Name, Card Number, Expiry Date, CVV).');
+                return;
+            }
+
+            // التحقق من اسم حامل الكارت (حروف فقط، طول بين 2 و50)
+            const namePattern = /^[A-Za-z\s]+$/;
+            if (!namePattern.test(cardholderName)) {
+                alert('Cardholder Name should only contain letters and spaces.');
+                return;
+            }
+            if (cardholderName.length < 2 || cardholderName.length > 50) {
+                alert('Cardholder Name should be between 2 and 50 characters.');
+                return;
+            }
+
+            // التحقق من رقم الكارت (16-19 رقم، أرقام فقط)
+            const cardNumberPattern = /^\d{16,19}$/;
+            if (!cardNumberPattern.test(cardNumber)) {
+                alert('Card Number must be between 16 and 19 digits and contain only numbers.');
+                return;
+            }
+
+            // التحقق من تاريخ الانتهاء (لازم يكون في المستقبل)
+            const currentDate = new Date();
+            const currentYear = currentDate.getFullYear() % 100; // Last two digits of the year (e.g., 25 for 2025)
+            const currentMonth = currentDate.getMonth() + 1; // 1-12
+            const selectedYear = parseInt(expiryYear) % 100;
+            const selectedMonth = parseInt(expiryMonth);
+
+            if (selectedYear < currentYear || (selectedYear === currentYear && selectedMonth <= currentMonth)) {
+                alert('Expiry Date must be in the future.');
+                return;
+            }
+
+            // التحقق من CVV (3 أو 4 أرقام، أرقام فقط)
+            const cvvPattern = /^\d{3,4}$/;
+            if (!cvvPattern.test(cvv)) {
+                alert('CVV must be 3 or 4 digits and contain only numbers.');
+                return;
+            }
+
+            // لو كل البيانات صحيحة، ينقل المستخدم لصفحة تأكيد الدفع
+            alert('Payment successful!');
+            window.location.href = 'confirmation.html'; // أو أي صفحة تأكيد
+        });
+    </script>
+
+    <!-- External Scripts -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
