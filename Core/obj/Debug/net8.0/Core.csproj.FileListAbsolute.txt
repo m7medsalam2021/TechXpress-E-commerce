@@ -1,0 +1,24 @@
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Core\bin\Debug\net8.0\Core.deps.json
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Core\bin\Debug\net8.0\Core.dll
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Core\bin\Debug\net8.0\Core.pdb
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Core\obj\Debug\net8.0\Core.sourcelink.json
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Core\obj\Debug\net8.0\Core.dll
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Core\obj\Debug\net8.0\refint\Core.dll
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Core\obj\Debug\net8.0\Core.pdb
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Core\obj\Debug\net8.0\ref\Core.dll
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Core\bin\Debug\net8.0\Core.deps.json
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Core\bin\Debug\net8.0\Core.dll
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Core\bin\Debug\net8.0\Core.pdb
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Core\obj\Debug\net8.0\Core.sourcelink.json
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Core\obj\Debug\net8.0\Core.dll
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Core\obj\Debug\net8.0\refint\Core.dll
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Core\obj\Debug\net8.0\Core.pdb
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Core\obj\Debug\net8.0\ref\Core.dll

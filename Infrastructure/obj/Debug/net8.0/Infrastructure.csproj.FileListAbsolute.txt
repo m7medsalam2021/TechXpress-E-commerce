@@ -1,0 +1,40 @@
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Infrastructure.runtimeconfig.json
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Core.dll
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Domain.dll
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Core.pdb
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Domain.pdb
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastr.15EFFBFE.Up2Date
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.dll
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
+E:\Me\Depi\Final Project\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.dll
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Infrastructure.runtimeconfig.json
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Core.dll
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Domain.dll
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Core.pdb
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\bin\Debug\net8.0\Domain.pdb
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastr.15EFFBFE.Up2Date
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
+C:\Users\Ahmed\Desktop\DEPI-Ecommerce\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
