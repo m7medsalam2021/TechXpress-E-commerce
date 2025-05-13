@@ -1,0 +1,425 @@
+/* Payment Section */
+.payment {
+    padding: 60px 0;
+    background-color: #171A3D;
+    font-family: 'Lato', sans-serif;
+}
+
+.payment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* Payment Form */
+.payment-form {
+    flex: 1;
+    padding: 1rem;
+}
+
+.payment-form h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #fcb700;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Payment Method Selection */
+.payment-method {
+    margin-bottom: 1.5rem;
+}
+
+.payment-method h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.method-options {
+    width: 520px;
+}
+
+.method-options .row {
+    height: 80px;
+    width: 100%;
+    border-bottom: 1.2px solid #292C58;
+}
+
+.method-options .row:last-child {
+    border: none;
+}
+
+.method-options .paypal {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #1E2148;
+}
+
+.method-options .credit {
+    background-color: #1E2148;
+}
+
+.method-options .paypal .left,
+.method-options .paypal .right,
+.method-options .credit .left,
+.method-options .credit .right {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.method-options .paypal .left,
+.method-options .credit .left {
+    float: left;
+    margin-left: 50px;
+}
+
+.method-options .paypal .left label,
+.method-options .credit .left label {
+    margin-left: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.method-options .paypal .left input[type="radio"],
+.method-options .credit .left input[type="radio"] {
+    visibility: hidden;
+}
+
+.method-options .paypal .left .radio,
+.method-options .credit .left .radio {
+    position: absolute;
+    top: -2px;
+    left: -20px;
+    border: 3px solid #414365;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #292B52;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.method-options .paypal .left .radio::before,
+.method-options .credit .left .radio::before {
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+    width: 9px;
+    height: 9px;
+    background-color: transparent;
+    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.method-options .paypal .right,
+.method-options .credit .right {
+    float: right;
+    margin-right: 30px;
+}
+
+.method-options .paypal .right img,
+.method-options .credit .right img {
+    width: 42px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.method-options input[type="radio"]:checked ~ .radio {
+    border: 3px solid #fcb700;
+    background-color: #efd07c;
+}
+
+.method-options input[type="radio"]:checked ~ .radio::before {
+    background-color: #fff;
+}
+
+/* Credit Card Form */
+.credit-card-form {
+    display: block;
+    width: 520px;
+}
+
+.credit-card-form .row {
+    height: 80px;
+    width: 100%;
+    border-bottom: 1.2px solid #292C58;
+    background-color: #242852;
+}
+
+.credit-card-form .row:last-child {
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.credit-card-form .cardholder .info,
+.credit-card-form .number .info {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 40px;
+}
+
+.credit-card-form .cardholder .info label,
+.credit-card-form .number .info label {
+    display: inline-block;
+    letter-spacing: 0.5px;
+    color: #8F92C3;
+    width: 100px;
+}
+
+.credit-card-form .cardholder .info input,
+.credit-card-form .number .info input {
+    display: inline-block;
+    max-width: 300px;
+    width: 300px;
+    background-color: transparent;
+    font-family: 'Source Code Pro', monospace;
+    border: none;
+    outline: none;
+    margin-left: 50px;
+    color: white;
+}
+
+.credit-card-form .cardholder .info input::placeholder,
+.credit-card-form .number .info input::placeholder {
+    font-family: 'Source Code Pro', monospace;
+    color: #444880;
+}
+
+.credit-card-form #cardnumber,
+.credit-card-form #cardnumber::placeholder {
+    letter-spacing: 2px;
+}
+
+.credit-card-form .details .left,
+.credit-card-form .details .right {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.credit-card-form .details .left {
+    float: left;
+    padding-left: 40px;
+    width: 50%;
+}
+
+.credit-card-form .details .left label {
+    letter-spacing: 0.5px;
+    color: #8F92C3;
+    width: 100px;
+    margin-right: 20px;
+}
+
+.credit-card-form .details .left select {
+    font-family: 'Source Code Pro', monospace;
+    cursor: pointer;
+    appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #444880;
+}
+
+.credit-card-form .details .left span {
+    font-family: 'Source Code Pro', monospace;
+    color: #444880;
+    margin: 0 2px;
+}
+
+.credit-card-form .details .right {
+    float: right;
+    width: 50%;
+}
+
+.credit-card-form .details .right label {
+    margin-right: 20px;
+    color: #8F92C3;
+}
+
+.credit-card-form .details .right input {
+    text-align: center;
+    width: 50px;
+    font-family: 'Source Code Pro', monospace;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+.credit-card-form .details .right input::placeholder {
+    font-family: 'Source Code Pro', monospace;
+    color: #444880;
+}
+
+.credit-card-form .details .right span {
+    text-align: center;
+    display: inline-block;
+    font-family: 'Source Code Pro', monospace;
+    cursor: pointer;
+    margin-left: 50px;
+    color: #fcb700;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #fcb700;
+    border-radius: 50%;
+}
+
+/* PayPal Payment Button */
+.paypal-form {
+    display: none;
+    text-align: center;
+    margin-top: 1rem;
+    width: 520px;
+}
+
+.paypal-form a {
+    background-color: #fcb700;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.paypal-form a:hover {
+    background-color: #fcb700;
+}
+.payment-form .button {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* مسافة بين الزرارين */
+}
+
+.payment-form .button button {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    width: 520px;
+    background-color: #fcb700; /* لون أصفر */
+    border: none;
+    color: #fff;
+    padding: 18px;
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.payment-form .button button:hover {
+    background-color: #ffcc3e; /* أصفر فاتح */
+}
+
+.payment-form .button button:active {
+    background-color: #fcb700; /* نفس اللون الأساسي */
+}
+
+.payment-form .button button i {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+.payment-form .button .cancel-button {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    width: 520px;
+    background-color: #e74c3c; /* لون أحمر للإلغاء */
+    border: none;
+    color: #fff;
+    padding: 18px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.payment-form .button .cancel-button:hover {
+    background-color: #c0392b; /* أحمر أغمق */
+}
+
+.payment-form .button .cancel-button:active {
+    background-color: #a93226; /* أحمر أغمق */
+}
+
+.payment-form .button .cancel-button i {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+/* Order Summary */
+.payment .ordersummary {
+    flex: 1;
+    padding: 1rem;
+}
+
+.payment .ordersummary h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #fcb700;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.payment .summary-details {
+    background-color: #242852;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.payment .summary-details .total,
+.payment .summary-details .payment-method-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.payment .summary-details .total span,
+.payment .summary-details .payment-method-details span {
+    color: #fcb700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .payment-form,
+    .payment .ordersummary {
+        flex: 100%;
+    }
+
+    .payment .ordersummary {
+        order: 1;
+    }
+
+    .payment-form {
+        order: 2;
+    }
+
+    .method-options,
+    .credit-card-form,
+    .paypal-form,
+    .payment-form .button button {
+        width: 100%;
+    }
+}

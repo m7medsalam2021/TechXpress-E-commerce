@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Domain.Models.Category>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Categories Management</h1>
+    </div>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center bg-primary">
+            <h6 class="m-0 font-weight-bold text-white">Categories List</h6>
+            <div>
+                <a asp-action="Create" class="btn btn-light btn-circle">
+                    <i class="fas fa-plus text-primary"></i>
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                    <thead class="thead-light">
+                        <tr>
+                            <th width="15%">Image</th>
+                            <th>@Html.DisplayNameFor(model => model.Name)</th>
+                            <th>@Html.DisplayNameFor(model => model.Description)</th>
+                            <th width="15%">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="text-center">
+                                    <div class="image-container" style="width: 150px; height: 150px; margin: 0 auto;">
+                                        <img src="@item.Image" alt="@item.Name"
+                                             class="img-fluid img-thumbnail"
+                                             style="object-fit: cover; width: 100%; height: 100%;" />
+                                    </div>
+                                </td>
+                                <td class="align-middle">@Html.DisplayFor(modelItem => item.Name)</td>
+                                <td class="align-middle">@Html.DisplayFor(modelItem => item.Description)</td>
+                                <td class="align-middle text-center">
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info">
+                                            <i class="fas fa-info-circle"></i>
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card-header {
+        border-radius: 0.35rem 0.35rem 0 0 !important;
+    }
+
+    .table th {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+    }
+
+    .btn-circle {
+        width: 30px;
+        height: 30px;
+        padding: 6px 0;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .image-container {
+        border: 1px solid #e3e6f0;
+        border-radius: 0.35rem;
+        overflow: hidden;
+        background-color: #f8f9fc;
+    }
+</style>

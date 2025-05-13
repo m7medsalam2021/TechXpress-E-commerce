@@ -1,0 +1,115 @@
+﻿@model Domain.ViewModels.ProductViewModel
+
+
+@section Scripts {
+    <script src="~/js/script.js"></script>
+}
+
+
+<!-- File CSS -->
+<link rel="stylesheet" href="~/assets/css/style.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<div class="cart">
+    <div class="items_in_cart">
+    </div>
+</div>
+
+
+<div class="top_page">
+    <div class="container">
+        <h1>Experience the Future of Technology with Our Topico.</h1>
+        <p>Find everything you need to transform your home into a smart, connected space. Our Topico store offers a wide range of devices to fit your needs</p>
+    </div>
+</div>
+
+
+<section class="all_products">
+    <div class="container">
+
+        <span class="btn_filter" onclick="open_close_filter()">
+            filter <i class="fa-solid fa-filter"></i>
+        </span>
+
+        <div class="filter">
+            <h2>filter</h2>
+
+            <div class="filter_item">
+                <h4>categorie</h4>
+                <div class="content">
+                    @Html.AntiForgeryToken()
+                    @foreach (var category in Model.Categories)
+                    { 
+                         <div class="item">
+                         <span>@category.Name</span>
+                            <input type="checkbox" name="categoryFilter" value="@category.Id"
+                                   onchange="filterProducts()">
+                         </div> 
+                     } 
+                </div>
+            </div>
+        </div>
+
+        <div id="products_dev" class="products_dev">
+            
+            @foreach (var product in Model.Products)
+            {
+                    <div class="product swiper-slide">
+
+
+                        <div class="icons">
+                        <span><i onclick="addToCart(@product.Id, this)" class="fa-solid fa-cart-plus"></i></span>
+                        </div>
+                        
+
+                        <div class="img_product">
+                        <img src="@Url.Content($"{product.Image}")" class="card-img-top" alt="@product.Name">
+                        <img src="@Url.Content($"{product.Image}")" class=" img_hover" alt="@product.Name">
+                        </div>
+
+                    <h3 class="name_product"><a href="">@product.Name</a></h3>
+                    
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price">
+                            <p><span>$@product.Price</span></p>
+                        <p>@Html.DisplayFor(modelItem => product.Category.Name)</p>
+                        </div>
+                    </div>
+            }
+            
+        </div>
+    </div>
+
+
+
+    <div class="pagination">
+        <span class="btn_page prev"><i class="fa-solid fa-backward-step"></i></span>
+        <a href="#"> <span class="num_page active">1</span></a>
+        <a href="#">  <span class="num_page">2</span></a>
+        <a href="#">  <span class="num_page">3</span></a>
+        <span class="btn_page next"><i class="fa-solid fa-forward-step"></i></span>
+    </div>
+</section>
+
+
+
+<div class="back_to_top">
+    <p>back to top</p>
+</div>
+
+
+
+
+
+
+<script src="../js/main.js"></script>
+<script src="../js/all_products.js"></script>

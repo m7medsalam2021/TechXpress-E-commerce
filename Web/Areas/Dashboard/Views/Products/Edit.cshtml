@@ -1,0 +1,113 @@
+﻿@model Domain.Models.Product
+
+@{
+    ViewData["Title"] = "Edit Product";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Edit Product</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" enctype="multipart/form-data" class="needs-validation" novalidate>
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <label asp-for="Name" class="form-label">Product Name</label>
+                            <input asp-for="Name" class="form-control" placeholder=" " />
+                            <span asp-validation-for="Name" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <label asp-for="Description" class="form-label">Description</label>
+                            <textarea asp-for="Description" class="form-control" placeholder=" " style="height: 100px"></textarea>
+                            <span asp-validation-for="Description" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <label asp-for="Price" class="form-label">Price</label>
+                            <input asp-for="Price" class="form-control" placeholder=" " />
+                            <span asp-validation-for="Price" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <label asp-for="CategoryId" class="form-label">Category </label>
+                            <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.Categories">
+                                <option value="">Select Category</option>
+                            </select>
+                            <span asp-validation-for="CategoryId" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label asp-for="Image" class="form-label fw-bold">Product Image</label>
+                            <input type="file" name="Image" class="form-control" accept="image/*" />
+                            <div class="form-text">Upload a new image to replace the current one</div>
+                            <span asp-validation-for="Image" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model.Image))
+                    {
+                        <div class="col-md-12">
+                            <div class="current-image mb-3">
+                                <label class="form-label fw-bold">Current Image</label>
+                                <div class="border p-2 rounded" style="max-width: 200px;">
+                                    <img src="@Model.Image" alt="Current product image" class="img-fluid rounded" />
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="mt-4 d-flex justify-content-between">
+                    <button type="submit" class="btn btn-success px-4">
+                        <i class="fas fa-save me-2"></i>Save Changes
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left me-2"></i>Back to List
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        // Enable Bootstrap validation styles
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+}

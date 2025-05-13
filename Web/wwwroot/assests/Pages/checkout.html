@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topoco</title>
+
+    <!-- File CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header Start -->
+    <header>
+        <div class="container top-nav">
+            <a href="../../index.html" class="logo"><img src="../img/logo-black.png" alt=""></a>
+            <form action="" class="search">
+                <input type="search" placeholder="Search for products...">
+                <button type="submit">Search</button>
+            </form>
+            <div class="cart_header">
+                <div onclick="open_cart()" class="icon_cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="count_item">0</span>
+                </div>
+                <div class="tottal_price">
+                    <p>My Cart:</p>
+                    <p class="price_cart_Head">$0</p>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="links container">
+                <i onclick="open_menu()" class="fa-solid fa-bars btn_open_menu"></i>
+                <ul id="menu">
+                    <span onclick="close_menu()" class="bg-overlay"></span>
+                    <i onclick="close_menu()" class="fa-regular fa-circle-xmark btn_close_menu"></i>
+                    <img class="logo_menu" src="../img/logo-black.png" alt="">
+                    <li><a href="../index.html">home</a></li>
+                    <li><a href="../Pages/all_products.html">all products</a></li>
+                    <li><a href="../Pages/about.html">about us</a></li>
+                    <li><a href="../Pages/contact.html">contact</a></li>
+                </ul>
+                <div class="loging_signup">
+                    <a href="../Pages/login.html">login <i class="fa-solid fa-right-to-bracket"></i></a>
+                    <a href="../Pages/signup_page.html">sign up <i class="fa-solid fa-user-plus"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Header End -->
+
+    <!-- Cart Start -->
+    <div class="cart">
+        <div class="top_cart">
+            <h3>My cart <span class="count_item_cart">(0 Item in Cart)</span></h3>
+            <span onclick="close_cart()" class="close_cart"><i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_cart"></div>
+        <div class="bottom_Cart">
+            <div class="total">
+                <p>Cart subtotal</p>
+                <p class="price_cart_total">$0</p>
+            </div>
+            <div class="button_Cart">
+                <a href="../Pages/checkout.html" class="btn_cart">Proceed to checkout</a>
+                <a href="../Pages/all_products.html" class="btn_cart trans_bg">Shop more</a>
+            </div>
+        </div>
+    </div>
+    <!-- Cart End -->
+
+    <!-- Checkout Section Start -->
+    <section class="checkout">
+        <div class="container checkout-container">
+            <form id="checkout-form" class="checkout-form">
+                <!-- Left Side: Delivery Address and Coupon Code -->
+                <div class="left-section">
+                    <div class="address">
+                        <h2>Delivery Address</h2>
+                        <div class="inputs">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Enter your Email" required>
+
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" pattern="[A-Za-z\s]+" title="Name should only contain letters and spaces" required>
+
+                            <label for="address">Address</label>
+                            <input type="text" id="address" placeholder="Enter your address" required>
+
+                            <label for="phone">Phone</label>
+                            <input type="text" id="phone" placeholder="Enter your phone" pattern="\d{10,15}" title="Phone number should be between 10 and 15 digits" required>
+                        </div>
+                    </div>
+                    <div class="coupon">
+                        <h2>Coupon Code</h2>
+                        <div class="inputs">
+                            <label for="coupon">Coupon Code</label>
+                            <input type="text" id="coupon" placeholder="Enter your coupon code">
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Side: Order Summary with Place Order Button -->
+                <div class="ordersummary">
+                    <h1>Order Summary</h1>
+                    <div class="items">
+                        <div class="item_cart">
+                            <img src="../img/product/product-1.jpg" alt="">
+                            <div class="content">
+                                <h4>Original Mobile Android Dual SIM Smart Phone G3</h4>
+                                <p class="price_cart">Price: <span>$185</span></p>
+                            </div>
+                        </div>
+                        <div class="item_cart">
+                            <img src="../img/product/product3.jpg" alt="">
+                            <div class="content">
+                                <h4>Samsung Screen</h4>
+                                <p class="price_cart">Price: <span>$140</span></p>
+                            </div>
+                        </div>
+                        <div class="total">
+                            <p>Total</p>
+                            <span>$325.00</span>
+                        </div>
+                        <div class="button_div">
+                            <button type="submit">Place Order</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Checkout Section End -->
+
+    <!-- Footer Start -->
+    <footer>
+        <div class="container">
+            <div class="big_row">
+                <img src="../img/logo-white.png" alt="">
+                <div class="hotline">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="text">
+                        <h5>Hotline Free 24/24:</h5>
+                        <h6>(+100) 123 456 7890</h6>
+                    </div>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit consectetur.</p>
+            </div>
+            <div class="row">
+                <h4>FAQs & Help</h4>
+                <div class="links">
+                    <a href="#">F.A.Q.’s</a>
+                    <a href="#">Ordering Tracking</a>
+                    <a href="../Pages/contact.html">Contacts</a>
+                    <a href="#">Events</a>
+                    <a href="#">Help Center</a>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Shipping & Delivery</h4>
+                <div class="links">
+                    <a href="#">Delivery Information</a>
+                    <a href="#">Discount</a>
+                    <a href="#">Payment & Shipping</a>
+                    <a href="#">Estimated Delivery Time</a>
+                    <a href="#">Shipping Guide</a>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Information</h4>
+                <div class="links">
+                    <a href="#">Popular</a>
+                    <a href="#">Our Services</a>
+                    <a href="#">Your Account</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Condition</a>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_footer">
+            <div class="container">
+                <p>Copyright © <span>Topico.</span> all rights reserved</p>
+                <div class="payment_img">
+                    <img src="../img/payment-1.png" alt="">
+                    <img src="../img/payment-2.png" alt="">
+                    <img src="../img/payment-3.png" alt="">
+                    <img src="../img/payment-4.png" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Inline JavaScript for Form Validation -->
+    <script>
+        document.getElementById('checkout-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // منع الإرسال الافتراضي للفورم
+
+            // جلب قيم الحقول
+            const email = document.getElementById('email').value.trim();
+            const name = document.getElementById('name').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            // التحقق من الحقول المطلوبة
+            if (email === '' || name === '' || address === '' || phone === '') {
+                alert('Please fill in all required fields (Email, Name, Address, Phone).');
+                return;
+            }
+
+            // التحقق من صحة الإيميل
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address (e.g., example@domain.com).');
+                return;
+            }
+
+            // التحقق من الاسم (حروف فقط، طول بين 2 و50)
+            const namePattern = /^[A-Za-z\s]+$/;
+            if (!namePattern.test(name)) {
+                alert('Name should only contain letters and spaces.');
+                return;
+            }
+            if (name.length < 2 || name.length > 50) {
+                alert('Name should be between 2 and 50 characters.');
+                return;
+            }
+
+            // التحقق من العنوان (طول بين 10 و100)
+            if (address.length < 10 || address.length > 100) {
+                alert('Address should be between 10 and 100 characters.');
+                return;
+            }
+
+            // التحقق من رقم الهاتف (أرقام فقط، طول بين 10 و15)
+            const phonePattern = /^\d{10,15}$/;
+            if (!phonePattern.test(phone)) {
+                alert('Phone number should be between 10 and 15 digits and contain only numbers.');
+                return;
+            }
+
+            // لو كل البيانات صحيحة، ينقل المستخدم لصفحة الدفع
+            window.location.href = 'payment.html';
+        });
+    </script>
+
+    <!-- External Scripts -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿@model List<Domain.ViewModels.CartItemViewModel>
+
+
+<div class="cart_item mt-n3">
+    <div class="top_cart">
+        <h3>My cart <span class="count_item_cart">(@Model.Sum(i => i.Qty) Item in Cart)</span></h3>
+        <span onclick="close_cart()" class="close_cart"><i class="fa-regular fa-circle-xmark"></i></span>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="item_cart mt-0">
+        <img src="@Url.Content(item.Image)" alt="@item.ProductName" />
+        <div class="content">
+            <h4>@item.ProductName</h4>
+            <p>$@item.Price x @item.Qty = $@(item.Price * item.Qty)</p>
+        </div>
+        <button onClick="remove_from_cart(${i})" class="delete_item"><i class="fa-solid fa-trash-can"></i></button>
+    </div>
+    }
+    @{
+        var subtotal = Model.Sum(item => item.Price * item.Qty);
+    }
+    <div class="bottom_Cart">
+        <div class="total">
+            <p>Cart subtotal</p>
+            <p class="price_cart_total">$@subtotal</p>
+        </div>
+
+        <div class="button_Cart">
+            <a asp-controller="Home" asp-action="Checkout" class="btn_cart">Proceed to checkout</a>
+            <a href="~/assests/Pages/all_products.html" class="btn_cart trans_bg">Shop more</a>
+        </div>
+    </div>
+</div>
