@@ -1,0 +1,394 @@
+﻿@model Domain.ViewModels.ProductViewModel
+
+@section Scripts {
+    <script src="~/js/script.js"></script>
+}
+@Html.AntiForgeryToken()
+
+<!-- File CSS -->
+<link rel="stylesheet" href="~/assets/css/style.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<div class="cart ">
+    <div class="top_cart">
+        <h3>My cart <span class="count_item_cart">(0Item in Cart)</span></h3>
+        <span onclick="close_cart()" class="close_cart"><i class="fa-regular fa-circle-xmark"></i></span>
+    </div>
+
+    <div class="items_in_cart">
+    </div>
+
+    <div class="bottom_Cart">
+        <div class="total">
+            <p>Cart subtotal</p>
+            <p class="price_cart_total">$0</p>
+        </div>
+
+        <div class="button_Cart">
+            <a href="~/assests/Pages/checkout.html" class="btn_cart">Proceed to checkout</a>
+            <a href="~/assests/Pages/all_products.html" class="btn_cart trans_bg">Shop more</a>
+        </div>
+    </div>
+</div>
+
+
+<section class="slider">
+    <div class="container">
+        <div class="side_bar">
+            <h2><i class="fa-solid fa-bars"></i> SHop by derparment</h2>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Product">All Categories</a>
+           @foreach (var category in Model.Categories)
+               { 
+            <a href="#">@category.Name</a>
+               }
+        </div>
+
+        <!-- Swiper -->
+        <div class="slide-swp mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#"><img src="~/assests/img/slider-01.jpg" alt=""></a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="#"><img src="~/assests/img/slider-02.jpg" alt=""></a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="#"><img src="~/assests/img/slider-03.jpg" alt=""></a>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <div class="feature_item">
+            <img src="~/assests/img/features1.png" alt="">
+            <div class="text">
+                <h4>Free Shipping</h4>
+                <p>Free Shipping on all order</p>
+            </div>
+        </div>
+
+        <div class="feature_item">
+            <img src="~/assests/img/features2.png" alt="">
+            <div class="text">
+                <h4>Free Shipping</h4>
+                <p>Free Shipping on all order</p>
+            </div>
+        </div>
+
+
+        <div class="feature_item">
+            <img src="~/assests/img/features3.png" alt="">
+            <div class="text">
+                <h4>Free Shipping</h4>
+                <p>Free Shipping on all order</p>
+            </div>
+        </div>
+
+
+        <div class="feature_item">
+            <img src="~/assests/img/features4.png" alt="">
+            <div class="text">
+                <h4>Free Shipping</h4>
+                <p>Free Shipping on all order</p>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</section>
+
+
+<section class="banner">
+    <div class="container">
+
+        <div class="banner_img">
+            <div class="glass_hover"></div>
+            <a href="#"></a>
+            <img src="~/assests/img/banner/banner-1.jpg" alt="">
+
+        </div>
+
+        <div class="banner_img">
+            <div class="glass_hover"></div>
+            <a href="#"></a>
+            <img src="~/assests/img/banner/banner-2.jpg" alt="">
+
+        </div>
+
+        <div class="banner_img">
+            <div class="glass_hover"></div>
+            <a href="#"></a>
+            <img src="~/assests/img/banner/banner-3.jpg" alt="">
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="slide slide_sale">
+    <div class="container">
+
+        <div class="sale_sec mySwiper">
+
+            <div class="top_slide">
+                <h2>on sale <span>product</span></h2>
+            </div>
+
+            <div id="swiper_items_sale" class="products swiper-wrapper">
+                @foreach (var product in Model.Products)
+                {
+                        <div class="product swiper-slide">
+
+
+                            <div class="icons">
+                            <span><i onclick="addToCart(@product.Id, this)" class="fa-solid fa-cart-plus"></i></span>
+                            </div>
+
+
+                            <div class="img_product">
+                                <img src="@Url.Content($"{product.Image}")" class="card-img-top" alt="@product.Name">
+                                <img src="@Url.Content($"{product.Image}")" class=" img_hover" alt="@product.Name">
+                            </div>
+
+                            <h3 class="name_product"><a href="">@product.Name</a></h3>
+
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+
+                            <div class="price">
+                                <p><span>$@product.Price</span></p>
+                                <p>@Html.DisplayFor(modelItem => product.Category.Name)</p>
+                            </div>
+                        </div>
+                    }
+            </div>
+
+            <div class="swiper-button-next btn_Swip"></div>
+            <div class="swiper-button-prev btn_Swip"></div>
+
+
+
+        </div>
+    </div>
+</section>
+
+
+<section class="banner banner_big">
+    <div class="container">
+
+        <div class="banner_img">
+            <div class="glass_hover"></div>
+            <a href="#"></a>
+            <img src="~/assests/img/banner/banner-4.jpg" alt="">
+
+        </div>
+
+        <div class="banner_img">
+            <div class="glass_hover"></div>
+            <a href="#"></a>
+            <img src="~/assests/img/banner/banner-5.jpg" alt="">
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<section class="slide slide_product">
+    <div class="container">
+
+
+        <div class="top_slide">
+            <h2>Computer & Desktop <span>products</span></h2>
+        </div>
+
+        <div class="slide_with_img">
+
+            <div class="categ_img">
+                <a href="#"><img src="~/assests/img/banner/banner-sm-1.jpg" alt=""></a>
+            </div>
+
+            <div class="product_swip mySwiper">
+
+                <div class="products other_product_swiper swiper-wrapper" id="other_product_swiper">
+                    @foreach (var product in Model.Products)
+                    {
+                        <div class="product swiper-slide">
+
+
+                            <div class="icons">
+                                <span><i onclick="addToCart(@product.Id, this)" class="fa-solid fa-cart-plus"></i></span>
+                            </div>
+
+
+                            <div class="img_product">
+                                <img src="@Url.Content($"{product.Image}")" class="card-img-top" alt="@product.Name">
+                                <img src="@Url.Content($"{product.Image}")" class=" img_hover" alt="@product.Name">
+                            </div>
+
+                            <h3 class="name_product"><a href="">@product.Name</a></h3>
+
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+
+                            <div class="price">
+                                <p><span>$@product.Price</span></p>
+                                <p>@Html.DisplayFor(modelItem => product.Category.Name)</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="swiper-button-next btn_Swip"></div>
+                <div class="swiper-button-prev btn_Swip"></div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="slide slide_product">
+    <div class="container">
+
+
+        <div class="top_slide">
+            <h2>Computer & Desktop <span>products</span></h2>
+        </div>
+
+        <div class="slide_with_img">
+
+
+
+            <div class="product_swip mySwiper">
+
+                <div class="products other_product_swiper swiper-wrapper" id="other_product_swiper2">
+                    @foreach (var product in Model.Products)
+                    {
+                        <div class="product swiper-slide">
+
+
+                            <div class="icons">
+                                <span><i onclick="addToCart(@product.Id, this)" class="fa-solid fa-cart-plus"></i></span>
+                            </div>
+
+
+                            <div class="img_product">
+                                <img src="@Url.Content($"{product.Image}")" class="card-img-top" alt="@product.Name">
+                                <img src="@Url.Content($"{product.Image}")" class=" img_hover" alt="@product.Name">
+                            </div>
+
+                            <h3 class="name_product"><a href="">@product.Name</a></h3>
+
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+
+                            <div class="price">
+                                <p><span>$@product.Price</span></p>
+                                <p>@Html.DisplayFor(modelItem => product.Category.Name)</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="swiper-button-next btn_Swip"></div>
+                <div class="swiper-button-prev btn_Swip"></div>
+
+
+            </div>
+
+            <div class="categ_img">
+                <a href="#"><img src="~/assests/img/banner/banner-sm-2.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="banner">
+    <div class="container">
+
+        <div class="banner_img">
+            <div class="glass_hover"></div>
+            <a href="#"></a>
+            <img src="~/assests/img/banner/banner-6.jpg" alt="">
+
+        </div>
+
+        <div class="banner_img">
+            <div class="glass_hover"></div>
+            <a href="#"></a>
+            <img src="~/assests/img/banner/banner-7.jpg" alt="">
+
+        </div>
+
+        <div class="banner_img">
+            <div class="glass_hover"></div>
+            <a href="#"></a>
+            <img src="~/assests/img/banner/banner-8.jpg" alt="">
+
+        </div>
+
+    </div>
+</section>
+
+
+<div class="newsletter">
+    <div class="container">
+        <div class="text">
+            <img src="~/assests/img/icon_email.png" alt="">
+            <div class="content">
+                <h4>sign up to newsletter</h4>
+                <p>Get email updates about our latest shop...and receive</p>
+                <h6>$30 Coupon For First Shopping</h6>
+            </div>
+        </div>
+
+        <form action="" class="newsletter_form">
+            <input type="email" placeholder="Enter your email here...">
+            <button type="submit">subscribe</button>
+        </form>
+    </div>
+</div>
+
+<div class="back_to_top">
+    <p>back to top</p>
+</div>
+
+
+
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="~/assests/js/swiper.js"></script>
+<script src="~/assests/js/main.js"></script>
+<script src="~/assests/js/items_home.js"></script>

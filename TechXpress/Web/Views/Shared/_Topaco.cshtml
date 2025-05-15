@@ -1,0 +1,156 @@
+﻿@using Microsoft.AspNetCore.Identity
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@section Scripts {
+    <script src="~/js/script.js"></script>
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Topoco</title>
+    <!-- File CSS -->
+    <link rel="stylesheet" href="~/assests/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+
+<header>
+    <div class="container top-nav">
+        <a href="~/assests/index.html" class="logo"><img src="~/assests/img/logo-black.png" alt=""></a>
+        <form action="" class="search">
+            <input type="search" placeholder="Search for products...">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="cart_header">
+            <div onclick="open_cart()" class="icon_cart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="count_item">0</span>
+            </div>
+            <div class="tottal_price">
+                <p>My Cart:</p>
+                <p class="price_cart_Head">$0</p>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="links container">
+            <i onclick="open_menu()" class="fa-solid fa-bars btn_open_menu"></i>
+            <ul id="menu">
+                <span onclick="close_menu()" class="bg-overlay"></span>
+                <i onclick="close_menu()" class="fa-regular fa-circle-xmark btn_close_menu"></i>
+                <img class="logo_menu" src="~/img/logo-black.png" alt="">
+
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Product">Product</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
+               </li>
+                <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                </li>
+
+            </ul>
+
+            <div class="loging_signup">
+                @* <a asp-controller="Account" asp-action="Login">login <i class="fa-solid fa-right-to-bracket"></i></a> *@
+                @* <a asp-controller="Account" asp-action="Register">sign up <i class="fa-solid fa-user-plus"></i></a> *@
+                <partial name="_loginPartial" class="btn btn-primary" />
+            </div>
+        </div>
+    </nav>
+</header>
+<body>     
+    @RenderBody()
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="~/assests/js/swiper.js"></script>
+    <script src="~/assests/js/main.js"></script>
+    <script src="~/assests/js/items_home.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+<footer>
+    <div class="container">
+        <div class="big_row">
+            <img src="~/assests/img/logo-white.png" alt="">
+            <div class="hotline">
+                <i class="fa-solid fa-headset"></i>
+                <div class="text">
+                    <h5>Hotline Free 24/24:</h5>
+                    <h6>(+100) 123 456 7890</h6>
+                </div>
+            </div>
+
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit consectetur.</p>
+        </div>
+
+        <div class="row">
+            <h4>FAQs & Help</h4>
+
+            <div class="links">
+                <a href="#">F.A.Q.’s</a>
+                <a href="#">Ordering Tracking</a>
+                <a href="~/assests/Pages/contact.html">Contacts</a>
+                <a href="#">Events</a>
+                <a href="#">Help Center</a>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <h4>Shipping & Delivery</h4>
+
+            <div class="links">
+                <a href="#">Delivery Information</a>
+                <a href="#">Discount</a>
+                <a href="#">Payment & Shipping</a>
+                <a href="#">Estimated Delivery Time</a>
+                <a href="#">Shipping Guide</a>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <h4>Information</h4>
+
+            <div class="links">
+                <a href="#">Popular</a>
+                <a href="#">Our Services</a>
+                <a href="#">Your Account</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Condition</a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="bottom_footer">
+        <div class="container">
+            <p>Copyright &copy; <span>Topico.</span> all rights reserved</p>
+
+            <div class="payment_img">
+                <img src="~/assests/img/payment-1.png" alt="">
+                <img src="~/assests/img/payment-2.png" alt="">
+                <img src="~/assests/img/payment-3.png" alt="">
+                <img src="~/assests/img/payment-4.png" alt="">
+            </div>
+        </div>
+    </div>
+</footer>
+</html>

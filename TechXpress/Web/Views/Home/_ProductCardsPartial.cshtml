@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Domain.Models.Product>
+@section Scripts {
+    <script src="~/js/script.js"></script>
+}
+@foreach (var product in Model)
+{
+    <div class="product swiper-slide">
+        <div class="icons">
+            <span><i onclick="addToCart(@product.Id, this)" class="fa-solid fa-cart-plus"></i></span>
+        </div>
+
+        <div class="img_product">
+            <img src="@Url.Content(product.Image)" class="card-img-top" alt="@product.Name">
+            <img src="@Url.Content(product.Image)" class="img_hover" alt="@product.Name">
+        </div>
+
+        <h3 class="name_product"><a href="#">@product.Name</a></h3>
+
+        <div class="stars">
+            @for (int i = 0; i < 5; i++)
+            {
+                <i class="fa-solid fa-star"></i>
+            }
+        </div>
+        <div class="price">
+            <p><span>$@product.Price</span></p>
+            <p>@product.Category?.Name</p>
+        </div>
+    </div>
+}

@@ -1,0 +1,97 @@
+﻿@model Domain.Models.Category
+
+@{
+    ViewData["Title"] = "Edit Category";
+}
+
+<div class="container py-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h2 class="h5 mb-0">
+                <i class="fas fa-edit me-2"></i>Edit Category
+            </h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" enctype="multipart/form-data" class="needs-validation" novalidate>
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <input asp-for="Name" class="form-control" placeholder=" " required />
+                            <label asp-for="Name" class="form-label"></label>
+                            <span asp-validation-for="Name" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <textarea asp-for="Description" class="form-control" placeholder=" " style="height: 100px"></textarea>
+                            <label asp-for="Description" class="form-label"></label>
+                            <span asp-validation-for="Description" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label asp-for="Image" class="form-label fw-bold">Category Image</label>
+                            <input type="file" name="Image" class="form-control" accept="image/*" />
+                            <div class="form-text">Upload a new image to replace the current one</div>
+                            <span asp-validation-for="Image" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model.Image))
+                    {
+                        <div class="col-md-12">
+                            <div class="current-image mb-3">
+                                <label class="form-label fw-bold">Current Image</label>
+                                <div class="border p-2 rounded" style="max-width: 200px;">
+                                    <img src="@Model.Image" alt="Current category image" class="img-fluid rounded" />
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="mt-4 d-flex justify-content-between">
+                    <button type="submit" class="btn btn-success px-4">
+                        <i class="fas fa-save me-2"></i>Save Changes
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left me-2"></i>Back to List
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        // Enable Bootstrap validation styles
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+}

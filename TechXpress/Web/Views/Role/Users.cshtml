@@ -1,0 +1,48 @@
+﻿@model IEnumerable<User>
+
+@{
+    ViewData["Title"] = "Users";
+    Layout = "_Layout";
+
+}
+
+
+<div class="container my-4">
+    <h1>Users</h1>
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    }
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>User Id</th>
+                <th>User Name</th>
+                <th>Full Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.UserName</td>
+                    <td>@user.FullName</td>
+                    <td>
+                        <a asp-action="AsignRolesToUser" asp-route-userId="@user.Id" asp-controller="Role" class="btn btn-info btn-sm">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+
+    </table>
+</div>
+

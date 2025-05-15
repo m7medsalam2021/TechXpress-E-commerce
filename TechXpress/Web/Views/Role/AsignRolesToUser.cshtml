@@ -1,0 +1,59 @@
+﻿@using Domain.ViewModels
+@model List<RoleViewModel>
+
+@{
+    ViewData["Title"] = "Assign Roles to User";
+    Layout = "_Layout";
+}
+
+<div class="container my-4">
+    <h2>Set Roles For @ViewBag.FullName</h2>
+    <form asp-action="AsignRolesToUser" id="roleForm" method="post">
+        <input type="hidden" name="userId" value="@ViewBag.UserId" />
+        <input type="hidden" name="jsonRoles" />
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Role Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>@Model[i].RoleName</td>
+                        <td>
+                            <input type="checkbox" class="role-checkbox"
+                                   data-rolename="@Model[i].RoleName"
+                                   data-roleid="@Model[i].RoleId"
+                            @(Model[i].UserRole ? "checked" : "") />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <button type="submit" class="btn btn-primary my-3">Save Roles</button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('roleForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            let roleList = [];
+            document.querySelectorAll('.role-checkbox').forEach(checkbox => {
+                roleList.push({
+                    RoleName: checkbox.dataset.rolename,
+                    RoleId: checkbox.dataset.roleid,
+                    UserRole: checkbox.checked
+                });
+            });
+            const input = document.querySelector('input[name="jsonRoles"]');
+            input.value = JSON.stringify(roleList);
+            e.target.submit();
+        });
+    </script>
+}
