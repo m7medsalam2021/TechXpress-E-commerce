@@ -3,12 +3,14 @@
 TechXpress is a scalable and maintainable e-commerce web application for selling electronics (laptops, mobiles, cameras). Built using ASP.NET Core MVC, it follows NTier Architecture, Repository Pattern, and Unit of Work Pattern to ensure clean separation of concerns and ease of development and maintenance.
 
 🎯 Project Objectives
+
 Develop a full-featured e-commerce platform.
 Apply clean architecture principles using NTier design.
 Integrate secure user authentication and payment gateways.
 Deploy a fully functional system with role-based access.
 
 🧱 Architecture & Design Patterns
+
 NTier Architecture
 TechXpress.Web: Presentation Layer (Views, Controllers, JS).
 TechXpress.Core: Business Logic Layer (Service classes, rules).
