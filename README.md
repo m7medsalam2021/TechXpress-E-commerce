@@ -25,7 +25,10 @@ Used for injecting services and promoting testability and loose coupling.
 🔧 Technologies Used
 
 ASP.NET Core MVC
-Entity Framework Core
+
+Entity Framework Core 
+
 ASP.NET Identity for authentication and role management
+
 Stripe API for payment integration
 
